@@ -63,12 +63,12 @@ $(document).ready(function () {
             // 數據加載完成後的回調
             // 顯示完成提示並在1秒後淡出
             $("#loadStatus")
-                .html('<i class="fas fa-check"></i> 同步中...')
+                .html('<i class="fas fa-spinner fa-spin"></i> 同步中...')
         });
 
         // 數據加載完成後，發送GET請求到指定網址
         $.ajax({
-            url: "https://teacherbackup.wentzao.com:1025/update_album",
+            url: googleScriptURL + "?action=updatetoteacher",
             method: "GET",
             success: function(data) {
                 $("#loadStatus")
